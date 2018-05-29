@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8E01797B20BC93F700FEEC7B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E01797A20BC93F700FEEC7B /* CoreLocation.framework */; };
+		8E01797D20BD301300FEEC7B /* dime-logos in Resources */ = {isa = PBXBuildFile; fileRef = 8E01797C20BD301300FEEC7B /* dime-logos */; };
 		8EA0D89920BA085200B0A1AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0D89820BA085200B0A1AA /* AppDelegate.swift */; };
 		8EA0D89B20BA085200B0A1AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0D89A20BA085200B0A1AA /* ViewController.swift */; };
 		8EA0D89E20BA085200B0A1AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EA0D89C20BA085200B0A1AA /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		8E01797A20BC93F700FEEC7B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8E01797C20BD301300FEEC7B /* dime-logos */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "dime-logos"; path = "../../../../Desktop/dime-logos"; sourceTree = "<group>"; };
 		8EA0D89520BA085200B0A1AA /* dime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EA0D89820BA085200B0A1AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EA0D89A20BA085200B0A1AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		8EA0D89720BA085200B0A1AA /* dime */ = {
 			isa = PBXGroup;
 			children = (
+				8E01797C20BD301300FEEC7B /* dime-logos */,
 				8EA0D89820BA085200B0A1AA /* AppDelegate.swift */,
 				8EA0D8C620BBD19100B0A1AA /* deal.swift */,
 				8EA0D8C820BBF62300B0A1AA /* location.swift */,
@@ -249,6 +252,7 @@
 			files = (
 				8EA0D8A320BA085B00B0A1AA /* LaunchScreen.storyboard in Resources */,
 				8EA0D8A020BA085B00B0A1AA /* Assets.xcassets in Resources */,
+				8E01797D20BD301300FEEC7B /* dime-logos in Resources */,
 				8EA0D89E20BA085200B0A1AA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
