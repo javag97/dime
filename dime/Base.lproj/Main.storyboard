@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NAN-Wd-ENq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -65,9 +65,6 @@
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" id="7S0-cf-3ev"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qTd-wy-UEM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,31 +78,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LPy-Mk-yRl">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dgJ-iW-Cl5">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="GlB-J9-DGU">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                    </mapView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="GlB-J9-DGU" firstAttribute="leading" secondItem="LPy-Mk-yRl" secondAttribute="leading" id="6Cc-FP-sve"/>
-                                    <constraint firstAttribute="bottom" secondItem="GlB-J9-DGU" secondAttribute="bottom" id="8S4-7B-kcb"/>
-                                    <constraint firstAttribute="trailing" secondItem="GlB-J9-DGU" secondAttribute="trailing" id="G1d-zR-cEp"/>
-                                    <constraint firstItem="GlB-J9-DGU" firstAttribute="top" secondItem="LPy-Mk-yRl" secondAttribute="top" id="fdZ-U7-XTZ"/>
-                                </constraints>
-                            </stackView>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Kmd-hP-A42"/>
+                                </connections>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dgJ-iW-Cl5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="D0L-ez-sG6"/>
+                            <constraint firstItem="dgJ-iW-Cl5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DSm-cN-NtS"/>
+                            <constraint firstAttribute="trailing" secondItem="dgJ-iW-Cl5" secondAttribute="trailing" id="aun-bW-sYf"/>
+                            <constraint firstItem="dgJ-iW-Cl5" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jh9-Ph-BJF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="map" destination="dgJ-iW-Cl5" id="kjP-29-bQ2"/>
                         <segue destination="nRq-5s-tzk" kind="show" id="u4D-4Q-GhC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="81" y="134"/>
+            <point key="canvasLocation" x="104.8" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>

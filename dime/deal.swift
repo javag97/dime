@@ -6,7 +6,6 @@
 //  Copyright © 2018 Javier Garcia. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class deal {
@@ -16,11 +15,11 @@ class deal {
     var desc: String //In-depth description about Coupon, may contain coupon code
     var img: UIImage //contains thumbnail image for the coupon
     
-    init(store: String, title: String, desc: String, img: UIImage) {
-        self.store = store
-        self.title = title
-        self.desc = desc
-        self.img = img
+    init() {
+        self.store = ""
+        self.title = ""
+        self.desc = ""
+        self.img = UIImage()
     }
 
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E01797B20BC93F700FEEC7B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E01797A20BC93F700FEEC7B /* CoreLocation.framework */; };
 		8EA0D89920BA085200B0A1AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0D89820BA085200B0A1AA /* AppDelegate.swift */; };
 		8EA0D89B20BA085200B0A1AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0D89A20BA085200B0A1AA /* ViewController.swift */; };
 		8EA0D89E20BA085200B0A1AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EA0D89C20BA085200B0A1AA /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E01797A20BC93F700FEEC7B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8EA0D89520BA085200B0A1AA /* dime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EA0D89820BA085200B0A1AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EA0D89A20BA085200B0A1AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E01797B20BC93F700FEEC7B /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E01797920BC93F700FEEC7B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8E01797A20BC93F700FEEC7B /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8EA0D88C20BA085100B0A1AA = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +96,7 @@
 				8EA0D8AC20BA085C00B0A1AA /* dimeTests */,
 				8EA0D8B720BA085C00B0A1AA /* dimeUITests */,
 				8EA0D89620BA085200B0A1AA /* Products */,
+				8E01797920BC93F700FEEC7B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
