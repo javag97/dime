@@ -10,38 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
-        <scene sceneID="n8a-ak-3A1">
-            <objects>
-                <tableViewController id="nRq-5s-tzk" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PEE-B2-eU7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="qlv-3D-lis">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qlv-3D-lis" id="IYv-Pp-TnT">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="fXt-3Q-o4P" kind="show" id="iGl-y6-Xzu"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="nRq-5s-tzk" id="qfj-gR-2VC"/>
-                            <outlet property="delegate" destination="nRq-5s-tzk" id="WPp-2Z-ylV"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="mEt-kd-5Tt"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jgo-jr-PFP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1018" y="134"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="9Jc-Ng-mfS">
             <objects>
@@ -55,7 +23,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fa7-36-3XE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2038" y="134"/>
+            <point key="canvasLocation" x="1170" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yJr-J5-Kt2">
@@ -68,7 +36,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qTd-wy-UEM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-822" y="134"/>
+            <point key="canvasLocation" x="-1716" y="134"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -96,12 +64,12 @@
                     </view>
                     <connections>
                         <outlet property="map" destination="dgJ-iW-Cl5" id="kjP-29-bQ2"/>
-                        <segue destination="nRq-5s-tzk" kind="show" id="u4D-4Q-GhC"/>
+                        <segue destination="fXt-3Q-o4P" kind="show" id="4uX-Dk-ggM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="104.8" y="133.5832083958021"/>
+            <point key="canvasLocation" x="298" y="134"/>
         </scene>
     </scenes>
 </document>
