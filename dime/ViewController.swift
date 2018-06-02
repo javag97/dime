@@ -19,12 +19,46 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(API.count)
         managerSetup()
         apiCall()
+        let coordinate = CLLocationCoordinate2DMake(35.252909,120.68741)
+        print(coordinate)
+        let span = MKCoordinateSpanMake(0.003, 0.003)
+        let region = MKCoordinateRegionMake(coordinate, span)
+        map.setRegion(region, animated:true)
+        
+        let locationTest = MKPointAnnotation()
+        locationTest.coordinate = coordinate
+        locationTest.title = "Test Coupon"
+        locationTest.subtitle = "Save 40% off NeXT Computers"
+        map.addAnnotation(locationTest)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            return nil
+        }
+        
+        let reuseId = "pin"
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+        if pinView == nil {
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            pinView?.animatesDrop = true
+            pinView?.canShowCallout = true
+            pinView?.isDraggable = true
+            pinView?.pinTintColor = .purple
+            
+            let rightButton: AnyObject! = UIButton(type: UIButtonType.detailDisclosure)
+            pinView?.rightCalloutAccessoryView = rightButton as? UIView
+        }
+        else {
+            pinView?.annotation = annotation
+        }
+        
+        return pinView
+    }
     
     func apiCall(){
       
@@ -59,7 +93,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             CLLocationManager.authorizationStatus() ==  .authorizedAlways){
             currentLocation = manager.location
         }
+        else{
         changeLocation(currentLocation: currentLocation)
+        }
     }
     
     
@@ -67,7 +103,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let longitude = "&lat=" + String(currentLocation.coordinate.latitude)
         let latitude = "&lng=" + String(currentLocation.coordinate.longitude)
         let offset = "&offset=" + String(0)
-        let limit = "&limit=" + String(2)
+        let limit = "&limit=" + String(1)
         let variables: String = longitude + latitude + offset + limit
         if API.count != 75 {
             var substrings = API.components(separatedBy: "&")
@@ -89,11 +125,31 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
 
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+            performSegue(withIdentifier: "couponDetails", sender: view)
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        print(#function)
+        if control == view.rightCalloutAccessoryView {
+            performSegue(withIdentifier: "couponDetails", sender: self)
+        }
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, didChange newState: MKAnnotationViewDragState, fromOldState oldState: MKAnnotationViewDragState) {
+        if newState == MKAnnotationViewDragState.ending {
+            let droppedAt = view.annotation?.coordinate
+            print(droppedAt ?? "coordicate is nil")
+        }
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
 
 
 }
