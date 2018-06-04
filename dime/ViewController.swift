@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var map: MKMapView!
     
@@ -20,9 +20,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         managerSetup()
-        apiCall()
-        let coordinate = CLLocationCoordinate2DMake(35.252909,120.68741)
-        print(coordinate)
+        //apiCall()
+        let coordinate = CLLocationCoordinate2DMake(35.252909,-120.68741)
         let span = MKCoordinateSpanMake(0.003, 0.003)
         let region = MKCoordinateRegionMake(coordinate, span)
         map.setRegion(region, animated:true)
@@ -31,33 +30,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationTest.coordinate = coordinate
         locationTest.title = "Test Coupon"
         locationTest.subtitle = "Save 40% off NeXT Computers"
+        print(locationTest)
         map.addAnnotation(locationTest)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        if annotation is MKUserLocation {
-            return nil
+        guard annotation is MKPointAnnotation else { return nil }
+        
+        let identifier = "Annotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView!.canShowCallout = true
+        } else {
+            annotationView!.annotation = annotation
         }
         
-        let reuseId = "pin"
-        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
-        if pinView == nil {
-            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-            pinView?.animatesDrop = true
-            pinView?.canShowCallout = true
-            pinView?.isDraggable = true
-            pinView?.pinTintColor = .purple
-            
-            let rightButton: AnyObject! = UIButton(type: UIButtonType.detailDisclosure)
-            pinView?.rightCalloutAccessoryView = rightButton as? UIView
-        }
-        else {
-            pinView?.annotation = annotation
-        }
-        
-        return pinView
+        return annotationView
     }
     
     func apiCall(){
@@ -88,7 +80,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         map.setRegion(region, animated: true)
         self.map.showsUserLocation = true
         var currentLocation: CLLocation!
-        
+
         if( CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
             CLLocationManager.authorizationStatus() ==  .authorizedAlways){
             currentLocation = manager.location
@@ -98,35 +90,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    
-    func changeLocation(currentLocation: CLLocation){
-        let longitude = "&lat=" + String(currentLocation.coordinate.latitude)
-        let latitude = "&lng=" + String(currentLocation.coordinate.longitude)
-        let offset = "&offset=" + String(0)
-        let limit = "&limit=" + String(1)
-        let variables: String = longitude + latitude + offset + limit
-        if API.count != 75 {
-            var substrings = API.components(separatedBy: "&")
-            API = substrings[0]
-            API += variables
-            
-        }
-        else{
-            API+=variables
-        }
-    }
-   
-    
     func managerSetup(){
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
-    }
-    
-
-    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-            performSegue(withIdentifier: "couponDetails", sender: view)
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
@@ -149,7 +117,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    func changeLocation(currentLocation: CLLocation){
+        let longitude = "&lat=" + String(currentLocation.coordinate.latitude)
+        let latitude = "&lng=" + String(currentLocation.coordinate.longitude)
+        let offset = "&offset=" + String(0)
+        let limit = "&limit=" + String(1)
+        let variables: String = longitude + latitude + offset + limit
+        if API.count != 75 {
+            var substrings = API.components(separatedBy: "&")
+            API = substrings[0]
+            API += variables
+        }
+        else{
+            API+=variables
+        }
+    }
 
 
 }

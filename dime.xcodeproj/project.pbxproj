@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8E01797B20BC93F700FEEC7B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E01797A20BC93F700FEEC7B /* CoreLocation.framework */; };
-		8E01797D20BD301300FEEC7B /* dime-logos in Resources */ = {isa = PBXBuildFile; fileRef = 8E01797C20BD301300FEEC7B /* dime-logos */; };
 		8E01797F20BDEB1F00FEEC7B /* deals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E01797E20BDEB1F00FEEC7B /* deals.swift */; };
 		8EA0D89920BA085200B0A1AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0D89820BA085200B0A1AA /* AppDelegate.swift */; };
 		8EA0D89B20BA085200B0A1AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0D89A20BA085200B0A1AA /* ViewController.swift */; };
@@ -39,7 +38,6 @@
 
 /* Begin PBXFileReference section */
 		8E01797A20BC93F700FEEC7B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		8E01797C20BD301300FEEC7B /* dime-logos */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "dime-logos"; path = "../../../../Desktop/dime-logos"; sourceTree = "<group>"; };
 		8E01797E20BDEB1F00FEEC7B /* deals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deals.swift; sourceTree = "<group>"; };
 		8EA0D89520BA085200B0A1AA /* dime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EA0D89820BA085200B0A1AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,7 +114,6 @@
 		8EA0D89720BA085200B0A1AA /* dime */ = {
 			isa = PBXGroup;
 			children = (
-				8E01797C20BD301300FEEC7B /* dime-logos */,
 				8EA0D89820BA085200B0A1AA /* AppDelegate.swift */,
 				8E01797E20BDEB1F00FEEC7B /* deals.swift */,
 				8ED07C5E20C1E2FC007EDB12 /* deal.swift */,
@@ -254,7 +251,6 @@
 			files = (
 				8EA0D8A320BA085B00B0A1AA /* LaunchScreen.storyboard in Resources */,
 				8EA0D8A020BA085B00B0A1AA /* Assets.xcassets in Resources */,
-				8E01797D20BD301300FEEC7B /* dime-logos in Resources */,
 				8EA0D89E20BA085200B0A1AA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +452,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_OPTIMIZATION = "";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = dime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -473,6 +470,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_OPTIMIZATION = "";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = dime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
