@@ -28,30 +28,36 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         
         let locationTest = MKPointAnnotation()
         locationTest.coordinate = coordinate
-        locationTest.title = "Test Coupon"
-        locationTest.subtitle = "Save 40% off NeXT Computers"
+        locationTest.title = "Starbucks Happy Hour"
+        locationTest.subtitle = "Receive 50% off grande or larger handcrafted Starbucks® Lattes or Macchiatos."
         print(locationTest)
         map.addAnnotation(locationTest)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard annotation is MKPointAnnotation else { return nil }
-        
-        let identifier = "Annotation"
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-        
-        if annotationView == nil {
-            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            annotationView!.canShowCallout = true
-        } else {
-            annotationView!.annotation = annotation
+        if annotation is MKUserLocation {
+            return nil
         }
         
-        return annotationView
+        let reuseId = "pin"
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+        if pinView == nil {
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            pinView?.animatesDrop = true
+            pinView?.canShowCallout = true
+            pinView?.isDraggable = true
+            pinView?.pinTintColor = .blue
+            
+            let rightButton: AnyObject! = UIButton(type: UIButtonType.detailDisclosure)
+            pinView?.rightCalloutAccessoryView = rightButton as? UIView
+        }
+        else {
+            pinView?.annotation = annotation
+        }
+        
+        return pinView
     }
-    
     func apiCall(){
       
         guard let url = URL(string: API) else { return }
