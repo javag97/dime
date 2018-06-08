@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coupon ipsum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPc-FB-mEO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coupon ipsum" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPc-FB-mEO">
                                 <rect key="frame" x="16" y="287" width="343" height="41"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <nil key="textColor"/>
@@ -40,17 +40,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="z6J-jm-R00" firstAttribute="leading" secondItem="zIx-bf-Nx2" secondAttribute="leading" constant="16" id="45b-hR-AeG"/>
-                            <constraint firstItem="WYP-EO-imm" firstAttribute="centerX" secondItem="gPc-FB-mEO" secondAttribute="centerX" id="IXp-c5-jcu"/>
-                            <constraint firstItem="gPc-FB-mEO" firstAttribute="leading" secondItem="zIx-bf-Nx2" secondAttribute="leading" constant="16" id="OxS-hX-MjG"/>
-                            <constraint firstItem="z6J-jm-R00" firstAttribute="top" secondItem="gPc-FB-mEO" secondAttribute="bottom" constant="4" id="Q42-Pr-2ap"/>
-                            <constraint firstItem="zIx-bf-Nx2" firstAttribute="trailing" secondItem="gPc-FB-mEO" secondAttribute="trailing" constant="16" id="XkW-vx-PsT"/>
-                            <constraint firstItem="gPc-FB-mEO" firstAttribute="top" secondItem="WYP-EO-imm" secondAttribute="bottom" constant="16" id="YAv-7D-DWT"/>
+                            <constraint firstItem="z6J-jm-R00" firstAttribute="top" secondItem="gPc-FB-mEO" secondAttribute="bottom" constant="4" id="QKm-IY-chx"/>
                             <constraint firstItem="WYP-EO-imm" firstAttribute="top" secondItem="zIx-bf-Nx2" secondAttribute="top" id="ZAs-hs-n9R"/>
                             <constraint firstItem="WYP-EO-imm" firstAttribute="leading" secondItem="NRH-lI-5YC" secondAttribute="leading" id="Zfq-wl-sje"/>
-                            <constraint firstItem="z6J-jm-R00" firstAttribute="top" secondItem="gPc-FB-mEO" secondAttribute="bottom" constant="4" id="dG0-FE-cRG"/>
+                            <constraint firstItem="gPc-FB-mEO" firstAttribute="centerX" secondItem="WYP-EO-imm" secondAttribute="centerX" id="aRh-Fl-C7x"/>
+                            <constraint firstItem="gPc-FB-mEO" firstAttribute="leading" secondItem="z6J-jm-R00" secondAttribute="leading" id="hbc-XR-8aZ"/>
                             <constraint firstItem="zIx-bf-Nx2" firstAttribute="trailing" secondItem="z6J-jm-R00" secondAttribute="trailing" constant="16" id="qBg-jp-ikc"/>
-                            <constraint firstItem="z6J-jm-R00" firstAttribute="top" secondItem="gPc-FB-mEO" secondAttribute="bottom" constant="4" id="tpu-me-0dq"/>
-                            <constraint firstItem="z6J-jm-R00" firstAttribute="top" secondItem="gPc-FB-mEO" secondAttribute="bottom" constant="4" id="w80-E1-nXE"/>
+                            <constraint firstItem="gPc-FB-mEO" firstAttribute="top" secondItem="WYP-EO-imm" secondAttribute="bottom" constant="16" id="sQH-E6-snS"/>
+                            <constraint firstItem="gPc-FB-mEO" firstAttribute="trailing" secondItem="z6J-jm-R00" secondAttribute="trailing" id="ugt-XG-hAX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zIx-bf-Nx2"/>
                     </view>

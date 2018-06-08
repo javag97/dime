@@ -12,9 +12,9 @@ struct deal : Codable {
     let title: String?
     let mediumImageUrl: URL?
     let finePrint : String?
-    let options: [options]
+    let options: [options]?
     struct options : Codable {
-        let redemptionLocations: [redemptionLocations]
+        let redemptionLocations: [redemptionLocations]?
         struct redemptionLocations : Codable {
             let lng: Double?
             let lat: Double?
