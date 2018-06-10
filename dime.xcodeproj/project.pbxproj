@@ -17,6 +17,7 @@
 		8EA0D8AE20BA085C00B0A1AA /* dimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0D8AD20BA085C00B0A1AA /* dimeTests.swift */; };
 		8EA0D8B920BA085C00B0A1AA /* dimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0D8B820BA085C00B0A1AA /* dimeUITests.swift */; };
 		8EC26FE020C51FFF002C24EE /* CouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC26FDF20C51FFF002C24EE /* CouponViewController.swift */; };
+		8EC26FE220CC90BF002C24EE /* MyAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC26FE120CC90BF002C24EE /* MyAnnotation.swift */; };
 		8ED07C5F20C1E2FC007EDB12 /* deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED07C5E20C1E2FC007EDB12 /* deal.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		8EA0D8B820BA085C00B0A1AA /* dimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dimeUITests.swift; sourceTree = "<group>"; };
 		8EA0D8BA20BA085C00B0A1AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EC26FDF20C51FFF002C24EE /* CouponViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponViewController.swift; sourceTree = "<group>"; };
+		8EC26FE120CC90BF002C24EE /* MyAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAnnotation.swift; sourceTree = "<group>"; };
 		8ED07C5E20C1E2FC007EDB12 /* deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deal.swift; sourceTree = "<group>"; };
 		8ED07C6020C1E5FA007EDB12 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,6 +122,7 @@
 				8E01797E20BDEB1F00FEEC7B /* deals.swift */,
 				8ED07C5E20C1E2FC007EDB12 /* deal.swift */,
 				8EA0D89A20BA085200B0A1AA /* ViewController.swift */,
+				8EC26FE120CC90BF002C24EE /* MyAnnotation.swift */,
 				8EC26FDF20C51FFF002C24EE /* CouponViewController.swift */,
 				8EA0D89C20BA085200B0A1AA /* Main.storyboard */,
 				8EA0D8A120BA085B00B0A1AA /* LaunchScreen.storyboard */,
@@ -281,6 +284,7 @@
 			files = (
 				8E01797F20BDEB1F00FEEC7B /* deals.swift in Sources */,
 				8EA0D89B20BA085200B0A1AA /* ViewController.swift in Sources */,
+				8EC26FE220CC90BF002C24EE /* MyAnnotation.swift in Sources */,
 				8EC26FE020C51FFF002C24EE /* CouponViewController.swift in Sources */,
 				8EA0D89920BA085200B0A1AA /* AppDelegate.swift in Sources */,
 				8ED07C5F20C1E2FC007EDB12 /* deal.swift in Sources */,

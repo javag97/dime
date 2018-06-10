@@ -18,6 +18,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     let manager = CLLocationManager()
     
     override func viewDidLoad() {
+        var test = MyAnnotation()
+        test.image = URL(string: "https://images.unsplash.com/photo-1512990414788-d97cb4a25db3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8d3313d109d86ac30336aadd47f83880&auto=format&fit=crop&w=1003&q=80")!
+        test.title = "hejjo"
+        test.subtitle = "piwwow"
+        print(test.image)
+    
         super.viewDidLoad()
         managerSetup()
 
@@ -27,40 +33,44 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         guard let url = URL(string: API) else { return }
         URLSession.shared.dataTask(with: url){ (data, response, err) in
             guard let data = data else { return }
-            var pins = [MKPointAnnotation?]()
+            var pins = [MyAnnotation?]()
             do{
                 let datum = try JSONDecoder().decode(deals.self, from: data)
                 print(type(of: datum))
                 
                 for item in datum.deals { //iterates through each deal and assigns to a point annotation
-                    let locationTest = MKPointAnnotation()
+                    let locationTest = MyAnnotation()
                     
                     if let title = item.title{
                         locationTest.title = title
                     }
-                    if let count = item.options?[0].redemptionLocations {
+                    if let count = item.options?[0].redemptionLocations { // it is possible for a coupon to be redeemable at multiple locations
                         for coord in count{
                             locationTest.coordinate = CLLocationCoordinate2DMake(coord.lat!, coord.lng!)
                         }
                     }
                     else{
-                        print("no stuff in here")
+                        print("no data in here")
                     }
                     if let sub = item.finePrint {
                         locationTest.subtitle = sub
                     }
+                    if let link = item.mediumImageUrl {
+                        locationTest.image = link
+                    }
+                    
                     if(locationTest.coordinate.latitude != 0.0 || locationTest.coordinate.longitude != 0.0){
                         pins.append(locationTest)
                     }
                 }
-                self.map.addAnnotations(pins as! [MKAnnotation])
+                self.map.addAnnotations(pins as! [MyAnnotation])
             } catch let jsonErr{
                     print("Error w/ json:", jsonErr)
               }
         }.resume()
     }
 
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {//called everytime location is ipdated
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {//called everytime location is updated
         let location = locations.last
         let span = MKCoordinateSpanMake(0.01, 0.01)
         let myLocation = CLLocationCoordinate2DMake((location?.coordinate.latitude)!, (location?.coordinate.longitude)!)
@@ -100,7 +110,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         
         let rightButton = UIButton(type: .detailDisclosure)
         pinView.rightCalloutAccessoryView = rightButton
-
         return pinView
     }
     
@@ -124,12 +133,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {//this is called before a segue is performed
             print(sender)
-            if let selectedDeal = sender as? MKPointAnnotation {
+            if let selectedDeal = sender as? MyAnnotation {
                 let couponView = segue.destination as! CouponViewController
-                print(selectedDeal)
-                print("TEst")
                 couponView.myTitle = selectedDeal.title!
                 couponView.myDescription = selectedDeal.subtitle!
+                couponView.myImage = selectedDeal.image
             }
         
     }

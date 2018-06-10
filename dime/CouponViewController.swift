@@ -20,10 +20,11 @@ class CouponViewController: UIViewController {
     
     var myTitle = String()
     var myDescription = String()
-    //var myImage = URL
+    var myImage = URL(string: "https://images.unsplash.com/photo-1512990414788-d97cb4a25db3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8d3313d109d86ac30336aadd47f83880&auto=format&fit=crop&w=1003&q=80")
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setup()
     
         // Do any additional setup after loading the view.
@@ -32,9 +33,10 @@ class CouponViewController: UIViewController {
     func setup(){
         couponTitle.text = myTitle
         couponDescription.text = myDescription
+        
         if let url = URL(string: "https://images.unsplash.com/photo-1522039906375-50d8e4d9550a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5eaca99883acd120fe433586e4911482&auto=format&fit=crop&w=799&q=80") {
             do {
-                let data: Data = try Data(contentsOf: url)
+                let data: Data = try Data(contentsOf: myImage!)
                 image.image = UIImage(data: data)
             } catch {
                 // error handling
