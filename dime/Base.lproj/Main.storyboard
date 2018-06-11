@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--CouponController-->
+        <!--Coupon Details-->
         <scene sceneID="9Jc-Ng-mfS">
             <objects>
-                <viewController title="CouponController" id="fXt-3Q-o4P" customClass="CouponViewController" customModule="dime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Coupon Details" id="fXt-3Q-o4P" customClass="CouponViewController" customModule="dime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NRH-lI-5YC">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,6 +82,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YCO-6U-vAf">
                         <rect key="frame" x="0.0" y="20" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.99607843137254903" green="0.96470588235294119" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="JPq-Wj-DIE"/>
@@ -89,12 +93,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HQA-wF-GFS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1486" y="-626"/>
+            <point key="canvasLocation" x="298" y="-765"/>
         </scene>
         <!--Map-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="dime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Map" id="BYZ-38-t0r" customClass="ViewController" customModule="dime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,25 +109,41 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Kmd-hP-A42"/>
                                 </connections>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WhS-Lj-dyj">
+                                <rect key="frame" x="321" y="966" width="127" height="38"/>
+                                <color key="backgroundColor" red="0.18823529410000001" green="0.47450980390000003" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <state key="normal" title="Refresh">
+                                    <color key="titleColor" red="0.99607843139999996" green="0.96470588239999999" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="refreshedAnnotations:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x3I-zx-aqq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="WhS-Lj-dyj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="902" id="5dt-3b-joh"/>
                             <constraint firstItem="dgJ-iW-Cl5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="D0L-ez-sG6"/>
                             <constraint firstItem="dgJ-iW-Cl5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DSm-cN-NtS"/>
+                            <constraint firstItem="WhS-Lj-dyj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="321" id="J2d-dz-tbo"/>
                             <constraint firstAttribute="trailing" secondItem="dgJ-iW-Cl5" secondAttribute="trailing" id="aun-bW-sYf"/>
+                            <constraint firstItem="WhS-Lj-dyj" firstAttribute="centerX" secondItem="dgJ-iW-Cl5" secondAttribute="centerX" id="hsi-P8-hE9"/>
                             <constraint firstItem="dgJ-iW-Cl5" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jh9-Ph-BJF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Map" id="d5R-PA-Rrt"/>
+                    <navigationItem key="navigationItem" id="d5R-PA-Rrt"/>
                     <connections>
                         <outlet property="map" destination="dgJ-iW-Cl5" id="kjP-29-bQ2"/>
+                        <outlet property="refresh" destination="WhS-Lj-dyj" id="khV-7O-dDf"/>
                         <segue destination="fXt-3Q-o4P" kind="show" identifier="couponDetails" id="p2J-H9-3eY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="298" y="134"/>
+            <point key="canvasLocation" x="297.65625" y="133.59375"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.18823529411764706" green="0.47450980392156861" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
 </document>
