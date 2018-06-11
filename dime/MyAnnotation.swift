@@ -14,10 +14,12 @@ class MyAnnotation: NSObject, MKAnnotation {
     var image: URL
     var title: String?
     var subtitle: String?
+    var buyURL: URL
     
     override init() {
         self.coordinate = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
         self.image = URL(string: "www.google.com")!
+        self.buyURL = URL(string: "www.google.com")!
         super.init()
     }
    

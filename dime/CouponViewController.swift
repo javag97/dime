@@ -17,14 +17,21 @@ class CouponViewController: UIViewController {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var couponTitle: UILabel!
     @IBOutlet weak var couponDescription: UILabel!
+    @IBOutlet weak var buyNowButton: UIButton!
+    @IBAction func buyButtonTapped(_ sender: UIButton) {
+        print("Test")
+        UIApplication.shared.openURL(myLink!)
+        print("test")
+    }
+    
     
     var myTitle = String()
     var myDescription = String()
-    var myImage = URL(string: "https://images.unsplash.com/photo-1512990414788-d97cb4a25db3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8d3313d109d86ac30336aadd47f83880&auto=format&fit=crop&w=1003&q=80")
-    
+    var myImage = URL(string: "")
+    var myLink = URL(string: "")
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setup()
     
         // Do any additional setup after loading the view.
@@ -34,7 +41,7 @@ class CouponViewController: UIViewController {
         couponTitle.text = myTitle
         couponDescription.text = myDescription
         
-        if let url = URL(string: "https://images.unsplash.com/photo-1522039906375-50d8e4d9550a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5eaca99883acd120fe433586e4911482&auto=format&fit=crop&w=799&q=80") {
+        if let url = URL(string: "https://images.unsplash.com/photo-1499365094259-713ae26508c5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=26d4766855746c603e3d42aaec633144&auto=format&fit=crop&w=1050&q=80") {
             do {
                 let data: Data = try Data(contentsOf: myImage!)
                 image.image = UIImage(data: data)

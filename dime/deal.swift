@@ -9,14 +9,15 @@ import MapKit
 import Foundation
 
 struct deal : Codable {
-    let title: String?
-    let mediumImageUrl: URL?
+    let announcementTitle: String?
+    let largeImageUrl: URL?
     let finePrint : String?
     let options: [options]?
 
 }
 
 struct options : Codable {
+    let buyUrl : URL?
     let redemptionLocations: [redemptionLocations]?
     struct redemptionLocations : Codable {
         let lng: Double?

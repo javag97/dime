@@ -18,14 +18,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     let manager = CLLocationManager()
     
     override func viewDidLoad() {
-        var test = MyAnnotation()
-        test.image = URL(string: "https://images.unsplash.com/photo-1512990414788-d97cb4a25db3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8d3313d109d86ac30336aadd47f83880&auto=format&fit=crop&w=1003&q=80")!
-        test.title = "hejjo"
-        test.subtitle = "piwwow"
-        print(test.image)
-    
         super.viewDidLoad()
         managerSetup()
+
 
     }
     
@@ -41,7 +36,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                 for item in datum.deals { //iterates through each deal and assigns to a point annotation
                     let locationTest = MyAnnotation()
                     
-                    if let title = item.title{
+                    if let title = item.announcementTitle{
                         locationTest.title = title
                     }
                     if let count = item.options?[0].redemptionLocations { // it is possible for a coupon to be redeemable at multiple locations
@@ -55,12 +50,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                     if let sub = item.finePrint {
                         locationTest.subtitle = sub
                     }
-                    if let link = item.mediumImageUrl {
+                    if let link = item.largeImageUrl {
                         locationTest.image = link
+                    }
+                    if let buyURL = item.options?[0].buyUrl{
+                        locationTest.buyURL = buyURL
                     }
                     
                     if(locationTest.coordinate.latitude != 0.0 || locationTest.coordinate.longitude != 0.0){
                         pins.append(locationTest)
+                        
+
                     }
                 }
                 self.map.addAnnotations(pins as! [MyAnnotation])
@@ -72,7 +72,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {//called everytime location is updated
         let location = locations.last
-        let span = MKCoordinateSpanMake(0.01, 0.01)
+        let span = MKCoordinateSpanMake(0.03, 0.03)
         let myLocation = CLLocationCoordinate2DMake((location?.coordinate.latitude)!, (location?.coordinate.longitude)!)
         changeLocation(currentLocation: myLocation)
         let region = MKCoordinateRegionMake(myLocation, span)
@@ -138,6 +138,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                 couponView.myTitle = selectedDeal.title!
                 couponView.myDescription = selectedDeal.subtitle!
                 couponView.myImage = selectedDeal.image
+                couponView.myLink = selectedDeal.buyURL
             }
         
     }

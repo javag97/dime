@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8IO-WY-bZD">
-    <device id="retina4_7" orientation="portrait">
+    <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,39 +15,49 @@
             <objects>
                 <viewController title="CouponController" id="fXt-3Q-o4P" customClass="CouponViewController" customModule="dime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NRH-lI-5YC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coupon ipsum" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPc-FB-mEO">
-                                <rect key="frame" x="16" y="287" width="343" height="41"/>
+                                <rect key="frame" x="16" y="357" width="736" height="41"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WYP-EO-imm">
-                                <rect key="frame" x="0.0" y="64" width="375" height="207"/>
+                                <rect key="frame" x="0.0" y="64" width="768" height="277"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="207" id="4Ya-Sb-Ui1"/>
+                                    <constraint firstAttribute="height" constant="277" id="FsJ-A7-XdE"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6J-jm-R00">
-                                <rect key="frame" x="16" y="332" width="343" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deal ipsum" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6J-jm-R00">
+                                <rect key="frame" x="16" y="402" width="736" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HwI-Pg-ckc">
+                                <rect key="frame" x="16" y="439" width="78" height="36"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                <state key="normal" title="Buy Now"/>
+                                <connections>
+                                    <action selector="buyButtonTapped:" destination="fXt-3Q-o4P" eventType="touchUpInside" id="yOD-AI-n4B"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="z6J-jm-R00" firstAttribute="leading" secondItem="zIx-bf-Nx2" secondAttribute="leading" constant="16" id="45b-hR-AeG"/>
-                            <constraint firstItem="z6J-jm-R00" firstAttribute="top" secondItem="gPc-FB-mEO" secondAttribute="bottom" constant="4" id="QKm-IY-chx"/>
-                            <constraint firstItem="WYP-EO-imm" firstAttribute="top" secondItem="zIx-bf-Nx2" secondAttribute="top" id="ZAs-hs-n9R"/>
-                            <constraint firstItem="WYP-EO-imm" firstAttribute="leading" secondItem="NRH-lI-5YC" secondAttribute="leading" id="Zfq-wl-sje"/>
-                            <constraint firstItem="gPc-FB-mEO" firstAttribute="centerX" secondItem="WYP-EO-imm" secondAttribute="centerX" id="aRh-Fl-C7x"/>
-                            <constraint firstItem="gPc-FB-mEO" firstAttribute="leading" secondItem="z6J-jm-R00" secondAttribute="leading" id="hbc-XR-8aZ"/>
-                            <constraint firstItem="zIx-bf-Nx2" firstAttribute="trailing" secondItem="z6J-jm-R00" secondAttribute="trailing" constant="16" id="qBg-jp-ikc"/>
-                            <constraint firstItem="gPc-FB-mEO" firstAttribute="top" secondItem="WYP-EO-imm" secondAttribute="bottom" constant="16" id="sQH-E6-snS"/>
-                            <constraint firstItem="gPc-FB-mEO" firstAttribute="trailing" secondItem="z6J-jm-R00" secondAttribute="trailing" id="ugt-XG-hAX"/>
+                            <constraint firstItem="zIx-bf-Nx2" firstAttribute="trailing" secondItem="WYP-EO-imm" secondAttribute="trailing" id="812-4p-pzG"/>
+                            <constraint firstItem="gPc-FB-mEO" firstAttribute="top" secondItem="WYP-EO-imm" secondAttribute="bottom" constant="16" id="9aZ-Se-0SU"/>
+                            <constraint firstItem="WYP-EO-imm" firstAttribute="leading" secondItem="zIx-bf-Nx2" secondAttribute="leading" id="LgY-K7-kuL"/>
+                            <constraint firstItem="HwI-Pg-ckc" firstAttribute="leading" secondItem="zIx-bf-Nx2" secondAttribute="leading" constant="16" id="NAk-LI-eO7"/>
+                            <constraint firstItem="HwI-Pg-ckc" firstAttribute="top" secondItem="z6J-jm-R00" secondAttribute="bottom" constant="16" id="ReA-VM-sWT"/>
+                            <constraint firstItem="z6J-jm-R00" firstAttribute="leading" secondItem="zIx-bf-Nx2" secondAttribute="leading" constant="16" id="c5j-gA-Lg3"/>
+                            <constraint firstItem="zIx-bf-Nx2" firstAttribute="trailing" secondItem="gPc-FB-mEO" secondAttribute="trailing" constant="16" id="ep1-ju-2sy"/>
+                            <constraint firstItem="WYP-EO-imm" firstAttribute="top" secondItem="zIx-bf-Nx2" secondAttribute="top" id="gfw-OU-jVt"/>
+                            <constraint firstItem="z6J-jm-R00" firstAttribute="top" secondItem="gPc-FB-mEO" secondAttribute="bottom" constant="4" id="iSD-Zh-sMy"/>
+                            <constraint firstItem="zIx-bf-Nx2" firstAttribute="trailing" secondItem="z6J-jm-R00" secondAttribute="trailing" constant="16" id="iis-K3-rAv"/>
+                            <constraint firstItem="gPc-FB-mEO" firstAttribute="leading" secondItem="zIx-bf-Nx2" secondAttribute="leading" constant="16" id="yZE-VB-aKD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zIx-bf-Nx2"/>
                     </view>
@@ -55,6 +65,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="3k6-nv-YFL"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="buyNowButton" destination="HwI-Pg-ckc" id="XFH-EF-itQ"/>
                         <outlet property="couponDescription" destination="z6J-jm-R00" id="2aj-ZH-Beo"/>
                         <outlet property="couponTitle" destination="gPc-FB-mEO" id="53W-52-1wM"/>
                         <outlet property="image" destination="WYP-EO-imm" id="eNh-3X-rTQ"/>
@@ -62,14 +73,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fa7-36-3XE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1485.5999999999999" y="133.5832083958021"/>
+            <point key="canvasLocation" x="1485.15625" y="132.421875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ode-oS-kwR">
             <objects>
                 <navigationController id="8IO-WY-bZD" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YCO-6U-vAf">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -85,11 +96,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="dime" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dgJ-iW-Cl5">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Kmd-hP-A42"/>
                                 </connections>
