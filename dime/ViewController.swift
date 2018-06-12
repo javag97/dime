@@ -85,7 +85,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {//called everytime location is updated
         let location = locations.last
-        let span = MKCoordinateSpanMake(0.03, 0.03)
+        let span = MKCoordinateSpanMake(0.07, 0.07)
         let myLocation = CLLocationCoordinate2DMake((location?.coordinate.latitude)!, (location?.coordinate.longitude)!)
         let region = MKCoordinateRegionMake(myLocation, span)
         map.setRegion(region, animated: true)
